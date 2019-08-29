@@ -10,9 +10,18 @@ namespace CarsConsole
     {
         public Car(string _carName, string _carcolor, int _carPrice)
         {
-            CarName = _carName;
-            CarColor = _carcolor;
-            CarPrice = _carPrice;
+            this.CarName = _carName;
+            this.CarColor = _carcolor;
+
+            if (this.CarPrice>0)
+            {
+                CarPrice = _carPrice;
+            }
+            else
+            {
+                this.CarPrice = 10;
+            }
+            
         }
 
         public string CarName
