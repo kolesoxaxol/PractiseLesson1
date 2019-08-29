@@ -8,6 +8,7 @@ namespace CarsConsole
 {
     class Program
     {
+        // car operation
         enum CarsOperation { AddNew = 1, Show, MakeDiscount, Exit };
         static void Main(string[] args)
         {
@@ -16,6 +17,7 @@ namespace CarsConsole
             // garage for cars
             List<Car> myCarList = new List<Car>();
 
+            // no input check, be carefully this the values
             do
             {
                 Console.WriteLine($"Choose operation to do: {(int)CarsOperation.AddNew} - Add New Car , {(int)CarsOperation.Show} - Show all Cars, " +
