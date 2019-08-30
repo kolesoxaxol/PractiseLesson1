@@ -10,16 +10,28 @@ namespace Les9
     {
         public string Name { get; set; }
         public string Color { get; set; }
-        public uint Price { get; set; }
+        private uint price;
+        public uint Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                price = value;
+                SetDiscont();
+            }
+        }
         public int Discont { get; private set; }
-        public void SetDiscont()
+        internal void SetDiscont()
         {
             Random random = new Random();
             Discont = random.Next(0, 50);
         }
         public uint GetPriceWithDiscont()
         {
-            return (uint)(Price * Discont) / 100;
+            return Price - (uint)(Price * Discont) / 100;
         }
 
     }

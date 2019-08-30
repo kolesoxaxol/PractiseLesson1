@@ -11,60 +11,62 @@ namespace Les9
         static void Main(string[] args)
         {
             uint count;
+            CarMagazinE carMagazin = new CarMagazinE();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             do
             {
                 Console.Clear();
-                Console.Write("Введите количство машин:");
+                Console.Write("Введите количество машин:");
             } while (!uint.TryParse(Console.ReadLine(), out count));
-
-            Car[] carMagaz = new Car[count];
-            for (int i = 0; i < carMagaz.Length; i++)
+            
+            for (uint i = 0; i < count; i++)
             {
-                carMagaz[i] = new Car();
+                Car car = new Car();
                 Console.Clear();
-                Console.WriteLine($"Лот№ {i=1}"); 
+                Console.WriteLine($"Лот№ {i+1}"); 
                 Console.Write("Введите название машины:");
-                carMagaz[i].Name = Console.ReadLine();
+                car.Name = Console.ReadLine();
                 Console.Write("Введите цвет машины:");
-                carMagaz[i].Color = Console.ReadLine();
+                car.Color = Console.ReadLine();
                 uint price;
                 int clear = 0;
                 do
                 {
-                    ClearLine(0);
+                    ClearLine(clear);
                     Console.Write("Введите цену машины:");
                     clear = 1;
                 } while (!uint.TryParse(Console.ReadLine(),out price));
-                carMagaz[i].Price = price;
-                carMagaz[i].SetDiscont();
-
+                car.Price = price;
+                carMagazin.AddCar(car);
             }
-           
+
             bool exit = false;
             int select;
             do
             {
                 Console.Clear();
-                select = Menu(new List<string>() { "Просмотреть", "Выход" });
+                select = Menu(new List<string>() { "Просмотреть ассортимент", "Выход" });
                 switch(select)
                 {
                     case 1:
+                        PrintMagaz(carMagazin.GetAssortmentLst());
                         break;
                     case 2:
+                        exit = true;
                         break;
                 }
-
-
             } while (!exit);
-
         }
-        static void Print(Car[]car)
+        static public void PrintMagaz(List<string> magaz)
         {
-            for(int i = 0;i<car.Length;i++)
+            Console.Clear();
+            foreach(var car in magaz)
             {
-
+                Console.WriteLine(car);
             }
+            Console.SetCursorPosition(0, Console.CursorTop + 2);
+            Console.WriteLine("Для возврата нажмите любую кнопку");
+            Console.ReadKey(true);
         }
         static int Menu( List<string> menu)
         {
@@ -80,12 +82,12 @@ namespace Les9
                     Console.WriteLine($"{count}){m}");
                     count++;
                 }
-                Console.Write("Selected (1-{0}):", menu.Count);
+                Console.Write("Введите (1-{0}):", menu.Count);
 
                 while (!int.TryParse(Console.ReadLine(), out selectType))
                 {
                     ClearLine(1);
-                    Console.Write($"Selected (1-{menu.Count}):");
+                    Console.Write($"Введите (1-{menu.Count}):");
                 }
 
             } while (!(selectType >= 1 && selectType <= menu.Count));
