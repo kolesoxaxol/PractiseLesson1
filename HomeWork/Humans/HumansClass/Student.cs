@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Humans.HumansClass
 {
 
@@ -13,8 +14,8 @@ namespace Humans.HumansClass
         {
             this.GroupNumb = groupNumb;
         }
-
         public int GroupNumb {get; set;}
 
+        
     }
 }

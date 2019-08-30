@@ -15,7 +15,7 @@ namespace Humans.HumansClass
 
         //Even though Teacher and Student classes have the fourth property of the same type I make them separated from each other.
         //First - it makes easier to opperate with them. Second, it's easier to change group number of a Student rather than Academy Level of a Teacher in real life.
-        //I set AcademyLevel to private and there can be possible a method that allows to ascend or descend Academy Level if all requirements are met and specific trusted user gave a permission for this.
+        //I set AcademyLevel to private and, possibly, there can be  a method that allows to ascend or descend Academy Level if all requirements are met and specific trusted user gave a permission for this.
 
         public int AcademyLevel { get; }
 

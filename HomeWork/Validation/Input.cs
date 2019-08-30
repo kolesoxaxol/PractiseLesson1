@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ValidationDll
 {
     // Just a dll I've created during the first days of study that allows to check input for integer and a specific range of numbers.
-    // In the HomeWork like this it is necessary as we have to work with 40 students and mistakes are inevitable which may result in crashing if this method is not included.
+    // In the HomeWork like this it is necessary as we have to work with 40 students and mistakes are inevitable which may result in crashing. 
     public class Input
     {
         public static int Validation(int size, string text)
@@ -39,7 +39,7 @@ namespace ValidationDll
                             menuSelectResult = Console.ReadLine();
                             menuOption = int.TryParse(menuSelectResult, out menuSelect);
 
-                            if (0 < menuSelect && menuSelect <= size)
+                            if (0 <= menuSelect && menuSelect <= size)
                             {
                                 menuOptionResult = true;
                             }

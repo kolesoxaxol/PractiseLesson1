@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Humans.HumansClass;
+using Humans.Groups;
 
 namespace Humans.HumansLibrary
 {
     public static class StudentList
     {
-        static List<Student> _studentList;
 
+        static List<Student> _studentList;
+        //Some students are temporaly not in the list, because it's easier to test programm with lesser amount of people.
         static StudentList()
         {
             // 0 int group number states for "Not in group" as groups count from 1 to 3.
