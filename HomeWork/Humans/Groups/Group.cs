@@ -10,14 +10,15 @@ namespace Humans.Groups
 {
     public class Group
     {
+        //Group class that combines both Teacher and Student. Helps with organizing work with a specific student in a specific groups without any needs to call All Students Library.
         public Group(Teacher teacher, Student[] students)
         {
-            this.TTeacher = teacher;
-            this.SStudents = students;
+            this.Lector = teacher;
+            this.Listeners = students;
         }
 
-        public Teacher TTeacher { get; set; }
-        public Student[] SStudents { get; set; }
+        public Teacher Lector { get; set; }
+        public Student[] Listeners { get; set; }
 
     }
 }

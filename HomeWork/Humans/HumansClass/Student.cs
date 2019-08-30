@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Humans.HumansClass
 {
+
     public class Student : Person
     {
         public Student(string name, string surname, int age, int groupNumb) : base(name, surname, age)

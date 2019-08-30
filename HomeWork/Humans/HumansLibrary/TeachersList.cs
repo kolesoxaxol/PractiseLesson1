@@ -24,5 +24,14 @@ namespace Humans.HumansLibrary
         {
             return _teacherList.ToArray();
         }
+
+        public static void ShowTeachers()
+        {
+            Console.WriteLine("Teachers:");
+            for (int i = 0; i < TeachersList.GetTeachers().Length; i++)
+            {
+                Console.WriteLine($"N: {i + 1}, Name: {TeachersList.GetTeachers()[i].Name}, Surname: {TeachersList.GetTeachers()[i].Surname}, Age: {TeachersList.GetTeachers()[i].Age}, Group: {i + 1}");
+            }
+        }
     }
 }

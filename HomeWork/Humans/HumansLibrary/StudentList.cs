@@ -72,9 +72,10 @@ namespace Humans.HumansLibrary
 
         public static void ShowStudents()
         {
+            Console.WriteLine("All Students:");
             for (int i = 0; i < StudentList.GetStudents().Length; i++)
             {
-                Console.WriteLine($"N: {i}, Name: {StudentList.GetStudents()[i].Name}, Surname: {StudentList.GetStudents()[i].Surname}, Age: {StudentList.GetStudents()[i].Age}, " +
+                Console.WriteLine($"N: {i+1}, Name: {StudentList.GetStudents()[i].Name}, Surname: {StudentList.GetStudents()[i].Surname}, Age: {StudentList.GetStudents()[i].Age}, " +
                     $"Group: {((StudentList.GetStudents()[i].GroupNumb == 0) ? "Not assigned yet" : $"{StudentList.GetStudents()[i].GroupNumb}")}");
             }
         }
