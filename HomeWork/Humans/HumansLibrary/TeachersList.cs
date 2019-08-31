@@ -30,7 +30,8 @@ namespace Humans.HumansLibrary
             Console.WriteLine("Teachers:");
             for (int i = 0; i < TeachersList.GetTeachers().Length; i++)
             {
-                Console.WriteLine($"N: {i + 1}, Name: {TeachersList.GetTeachers()[i].Name}, Surname: {TeachersList.GetTeachers()[i].Surname}, Age: {TeachersList.GetTeachers()[i].Age}, Group: {i + 1}");
+                Console.WriteLine(String.Format("N: {0,0}, Name: {1,10}, Surname: {2,10}, Age: {3,3}, Group: {4,3}", i + 1, TeachersList.GetTeachers()[i].Name, TeachersList.GetTeachers()[i].Surname, TeachersList.GetTeachers()[i].Age, i+1));
+
             }
         }
     }

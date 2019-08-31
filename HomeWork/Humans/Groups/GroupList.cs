@@ -254,14 +254,14 @@ namespace Humans.Groups
         {
             Console.WriteLine($"Detailed information about group number {groupNumb}:\n");
 
-            Console.WriteLine($"Teacher: {GroupList.GetGroups()[groupNumb - 1].Lector.Name} {GroupList.GetGroups()[groupNumb - 1].Lector.Surname}, {GroupList.GetGroups()[groupNumb - 1].Lector.Age} years old, Academy level: {GroupList.GetGroups()[groupNumb - 1].Lector.AcademyLevel}.\n");
+            Console.WriteLine($"Teacher: {GroupList.GetGroups()[groupNumb - 1].Lector.Name, 0} {GroupList.GetGroups()[groupNumb - 1].Lector.Surname, 5}, {GroupList.GetGroups()[groupNumb - 1].Lector.Age, 3} years old, Academy level: {GroupList.GetGroups()[groupNumb - 1].Lector.AcademyLevel, 3}.\n");
             Console.WriteLine("Students:");
 
             for (int i = 0; i < GroupList.GetGroups()[groupNumb - 1].Listeners.Length; i++)
             {
                 if (GroupList.GetGroups()[groupNumb - 1].Listeners[i] != null)
                 {
-                    Console.WriteLine($"N: {i + 1}, Name: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Name}, Surname: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Surname}, Age: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Age}.");
+                    Console.WriteLine($"N: {i + 1, 0}, Name: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Name, 3}, Surname: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Surname, 5}, Age: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Age, 3}.");
                 }
             }
         }

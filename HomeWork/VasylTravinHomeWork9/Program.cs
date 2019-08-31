@@ -21,9 +21,10 @@ namespace VasylTravinHomeWork9
                 Console.WriteLine(" 2. Get information about a specific group.");
                 Console.WriteLine(" 3. Distribute new students into specific groups.");
                 Console.WriteLine(" 4. Add new student to the list.");
+                Console.WriteLine(" 5. Clear your screen");
                 Console.WriteLine("\n 0. Exit.");
 
-                int menuSelect = Input.Validation(4, "Select a number from the menu.");
+                int menuSelect = Input.Validation(5, "Select a number from the menu.");
                 int optionSelect;
                 switch (menuSelect)
                 {
@@ -67,6 +68,11 @@ namespace VasylTravinHomeWork9
                     case 4:
                         {
                             Humans.HumansLibrary.StudentList.AddStudent();
+                            break;
+                        }
+                    case 5:
+                        {
+                            Console.Clear();
                             break;
                         }
                     case 0:

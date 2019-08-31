@@ -40,7 +40,7 @@ namespace Humans.HumansClass
 
 
                 bool inputValid = tempName.All(Char.IsLetter);
-                while (!inputValid)
+                while (!inputValid || tempName == "")
                 {
                     if (!inputValid)
                     {
