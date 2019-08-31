@@ -97,12 +97,17 @@ namespace Humans.HumansLibrary
 
         public static void ShowStudents()
         {
-            Console.WriteLine("All Students:");
+            Console.WriteLine("\n========================================");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("All Students:\n");
+            Console.ResetColor();
+
             for (int i = 0; i < StudentList.GetStudents().Length; i++)
             {
 
                 Console.WriteLine(String.Format("N: {0,0}, Name: {1,10}, Surname: {2,10}, Age: {3,3}, Group: {4,3}",i+1, StudentList.GetStudents()[i].Name, StudentList.GetStudents()[i].Surname, StudentList.GetStudents()[i].Age, (StudentList.GetStudents()[i].GroupNumb==0)? "Not assigned yet" : $"{StudentList.GetStudents()[i].GroupNumb}"));
             }
+            Console.WriteLine("========================================");
         }
     }
 }

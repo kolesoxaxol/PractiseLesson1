@@ -27,12 +27,17 @@ namespace Humans.HumansLibrary
 
         public static void ShowTeachers()
         {
-            Console.WriteLine("Teachers:");
+            Console.WriteLine("\n========================================");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Teachers:\n");
+            Console.ResetColor();
+
             for (int i = 0; i < TeachersList.GetTeachers().Length; i++)
             {
                 Console.WriteLine(String.Format("N: {0,0}, Name: {1,10}, Surname: {2,10}, Age: {3,3}, Group: {4,3}", i + 1, TeachersList.GetTeachers()[i].Name, TeachersList.GetTeachers()[i].Surname, TeachersList.GetTeachers()[i].Age, i+1));
 
             }
+            Console.WriteLine("========================================");
         }
     }
 }

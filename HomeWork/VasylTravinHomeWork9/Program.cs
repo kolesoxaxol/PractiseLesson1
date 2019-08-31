@@ -16,13 +16,15 @@ namespace VasylTravinHomeWork9
 
             while (true)
             {
-                
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("\n 1. Get information about all students or teachers.");
                 Console.WriteLine(" 2. Get information about a specific group.");
                 Console.WriteLine(" 3. Distribute new students into specific groups.");
                 Console.WriteLine(" 4. Add new student to the list.");
                 Console.WriteLine(" 5. Clear your screen");
                 Console.WriteLine("\n 0. Exit.");
+                Console.ResetColor();
+
 
                 int menuSelect = Input.Validation(5, "Select a number from the menu.");
                 int optionSelect;

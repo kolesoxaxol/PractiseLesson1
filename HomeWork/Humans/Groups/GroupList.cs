@@ -160,14 +160,14 @@ namespace Humans.Groups
             while (studentCount1 + studentCount2 + studentCount3 < StudentList.GetStudents().Length && newStudents)
             {
                 //duplicated list of students that can be assigned.
-
+                Console.WriteLine("========================================");
                 for (int i = 0; i < allStudents.Count; i++)
                 {
 
-                    Console.WriteLine($"N: { i + 1}, Name: { allStudents[i].Name}, Surname: { allStudents[i].Surname}, Age: { allStudents[i].Age}");
+                    Console.WriteLine($"N: { i + 1, 0}, Name: { allStudents[i].Name, 10}, Surname: { allStudents[i].Surname, 10}, Age: { allStudents[i].Age, 3}");
 
                 }
-
+                Console.WriteLine("========================================");
                 //selection of a student.
                 int studentNum = -1 + Input.Validation(allStudents.Count, "Select number N of a student you want to assign to a specific group or select 0 if you want to quit.");
 
@@ -252,10 +252,22 @@ namespace Humans.Groups
         //showing info about a specific group.
         public static void ShowGroups(int groupNumb)
         {
-            Console.WriteLine($"Detailed information about group number {groupNumb}:\n");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"\nDetailed information about group number {groupNumb}:\n");
+            Console.ResetColor();
 
-            Console.WriteLine($"Teacher: {GroupList.GetGroups()[groupNumb - 1].Lector.Name, 0} {GroupList.GetGroups()[groupNumb - 1].Lector.Surname, 5}, {GroupList.GetGroups()[groupNumb - 1].Lector.Age, 3} years old, Academy level: {GroupList.GetGroups()[groupNumb - 1].Lector.AcademyLevel, 3}.\n");
+            Console.WriteLine("========================================");
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"Teacher:");
+            Console.ResetColor();
+
+
+            Console.WriteLine($"{ GroupList.GetGroups()[groupNumb - 1].Lector.Name, 0} {GroupList.GetGroups()[groupNumb - 1].Lector.Surname, 5}, {GroupList.GetGroups()[groupNumb - 1].Lector.Age, 3} years old, Academy level: {GroupList.GetGroups()[groupNumb - 1].Lector.AcademyLevel, 3}.\n");
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Students:");
+            Console.ResetColor();
 
             for (int i = 0; i < GroupList.GetGroups()[groupNumb - 1].Listeners.Length; i++)
             {
@@ -264,6 +276,8 @@ namespace Humans.Groups
                     Console.WriteLine($"N: {i + 1, 0}, Name: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Name, 3}, Surname: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Surname, 5}, Age: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Age, 3}.");
                 }
             }
+
+            Console.WriteLine("========================================");
         }
     }
 }
