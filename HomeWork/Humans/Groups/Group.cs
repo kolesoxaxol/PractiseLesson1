@@ -17,8 +17,8 @@ namespace Humans.Groups
             this.Listeners = students;
         }
 
-        public Teacher Lector { get; set; }
-        public Student[] Listeners { get; set; }
+        public Teacher Lector { get; internal set; }
+        public Student[] Listeners { get; internal set; }
 
     }
 }

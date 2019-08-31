@@ -10,7 +10,7 @@ namespace Humans.HumansClass
 
     public class Student : Person
     {
-        public Student(string name, string surname, int age, int groupNumb) : base(name, surname, age)
+        internal Student(string name, string surname, int age, int groupNumb) : base(name, surname, age)
         {
             this.GroupNumb = groupNumb;
         }

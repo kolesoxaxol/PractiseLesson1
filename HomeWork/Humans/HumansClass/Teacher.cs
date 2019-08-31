@@ -8,7 +8,7 @@ namespace Humans.HumansClass
 {
     public class Teacher : Person
     {
-        public Teacher(string name, string surname, int age, int academyLevel) : base(name, surname, age)
+        internal Teacher(string name, string surname, int age, int academyLevel) : base(name, surname, age)
         {
             this.AcademyLevel = academyLevel;
         }

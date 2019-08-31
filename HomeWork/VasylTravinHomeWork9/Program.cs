@@ -16,6 +16,7 @@ namespace VasylTravinHomeWork9
 
             while (true)
             {
+                
                 Console.WriteLine("\n 1. Get information about all students or teachers.");
                 Console.WriteLine(" 2. Get information about a specific group.");
                 Console.WriteLine(" 3. Distribute new students into specific groups.");

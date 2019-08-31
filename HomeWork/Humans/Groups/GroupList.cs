@@ -107,7 +107,8 @@ namespace Humans.Groups
 
         public static void Distribute()
         {
-            var allStudents = new List<Student>();
+
+            List<Student> allStudents = new List<Student>();
 
             //building a list of new students with (GroupNumb = 0).
             for (int i = 0; i < StudentList.GetStudents().Length; i++)

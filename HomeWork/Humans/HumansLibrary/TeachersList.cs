@@ -16,7 +16,7 @@ namespace Humans.HumansLibrary
             _teacherList = new List<Teacher>();
 
             _teacherList.Add(new Teacher("Nameless", "Apprentice", 100, 1));
-            _teacherList.Add(new Teacher("The Dark", "One", 300, 2));
+            _teacherList.Add(new Teacher("TheDark", "One", 100, 1));
             _teacherList.Add(new Teacher("Vladimir", "Drakula", 587, 3));
         }
 

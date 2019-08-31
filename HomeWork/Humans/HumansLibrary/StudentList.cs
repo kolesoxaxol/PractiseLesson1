@@ -18,53 +18,53 @@ namespace Humans.HumansLibrary
             // 0 int group number states for "Not in group" as groups count from 1 to 3.
             _studentList = new List<Student>();
 
-            _studentList.Add(new Student("Vasya1", "Petkin1", 24, 0));
-            _studentList.Add(new Student("Vasya2", "Petkin2", 23, 0));
-            _studentList.Add(new Student("Vasya3", "Petkin3", 22, 0));
-            _studentList.Add(new Student("Vasya4", "Petkin4", 21, 0));
-            _studentList.Add(new Student("Vasya5", "Petkin5", 20, 0));
+            _studentList.Add(new Student("VasyaOne", "PetkinOne", 24, 0));
+            _studentList.Add(new Student("VasyaTwo", "PetkinTwo", 23, 0));
+            _studentList.Add(new Student("VasyaT", "PetkinT", 22, 0));
+            //_studentList.Add(new Student("VasyaF", "PetkinF", 21, 0));
+            //_studentList.Add(new Student("VasyaFv", "PetkinFv", 20, 0));
 
-            _studentList.Add(new Student("Dima1", "Lebedev1", 24, 0));
-            //_studentList.Add(new Student("Dima2", "Lebedev2", 23, 0));
-            //_studentList.Add(new Student("Dima3", "Lebedev3", 22, 0));
-            //_studentList.Add(new Student("Dima4", "Lebedev4", 21, 0));
-            //_studentList.Add(new Student("Dima5", "Lebedev5", 20, 0));
+            ////_studentList.Add(new Student("DimaOne", "LebedevOne", 24, 0));
+            ////_studentList.Add(new Student("DimaTwo", "LebedevTwo", 23, 0));
+            ////_studentList.Add(new Student("DimaT", "LebedevT", 22, 0));
+            ////_studentList.Add(new Student("DimaF", "LebedevF", 21, 0));
+            ////_studentList.Add(new Student("DimaFv", "LebedevFv", 20, 0));
 
-            //_studentList.Add(new Student("Vanya1", "Smolin1", 24, 0));
-            //_studentList.Add(new Student("Vanya2", "Smolin2", 23, 0));
-            //_studentList.Add(new Student("Vanya3", "Smolin3", 22, 0));
-            //_studentList.Add(new Student("Vanya4", "Smolin4", 21, 0));
-            //_studentList.Add(new Student("Vanya5", "Smolin5", 20, 0));
+            ////_studentList.Add(new Student("VanyaOne", "SmolinOne", 24, 0));
+            ////_studentList.Add(new Student("VanyaTwo", "SmolinTwo", 23, 0));
+            ////_studentList.Add(new Student("VanyaT", "SmolinT", 22, 0));
+            ////_studentList.Add(new Student("VanyaF", "SmolinF", 21, 0));
+            ////_studentList.Add(new Student("VanyaFv", "SmolinFv", 20, 0));
 
-            //_studentList.Add(new Student("Slavik1", "Petrushin1", 24, 0));
-            //_studentList.Add(new Student("Slavik2", "Petrushin2", 23, 0));
-            //_studentList.Add(new Student("Slavik3", "Petrushin3", 22, 0));
-            //_studentList.Add(new Student("Slavik4", "Petrushin4", 21, 0));
-            //_studentList.Add(new Student("Slavik5", "Petrushin5", 20, 0));
+            ////_studentList.Add(new Student("SlavikOne", "PetrushinOne", 24, 0));
+            ////_studentList.Add(new Student("SlavikTwo", "PetrushinTwo", 23, 0));
+            ////_studentList.Add(new Student("SlavikT", "PetrushinT", 22, 0));
+            //_studentList.Add(new Student("SlavikF", "PetrushinF", 21, 0));
+            //_studentList.Add(new Student("SlavikFv", "PetrushinFv", 20, 0));
 
-            //_studentList.Add(new Student("Vasya1", "Smolin1", 24, 0));
-            //_studentList.Add(new Student("Vasya2", "Smolin2", 23, 0));
-            //_studentList.Add(new Student("Vasya3", "Smolin3", 22, 0));
-            //_studentList.Add(new Student("Vasya4", "Smolin4", 21, 0));
-            //_studentList.Add(new Student("Vasya5", "Smolin5", 20, 0));
+            //_studentList.Add(new Student("VasyaOne", "SmolinOne", 24, 0));
+            //_studentList.Add(new Student("VasyaTwo", "SmolinTwo", 23, 0));
+            //_studentList.Add(new Student("VasyaT", "SmolinT", 22, 0));
+            //_studentList.Add(new Student("VasyaF", "SmolinF", 21, 0));
+            //_studentList.Add(new Student("VasyaFv", "SmolinFv", 20, 0));
 
-            //_studentList.Add(new Student("Dima1", "Petrushin1", 24, 0));
-            //_studentList.Add(new Student("Dima2", "Petrushin2", 23, 0));
-            //_studentList.Add(new Student("Dima3", "Petrushin3", 22, 0));
-            //_studentList.Add(new Student("Dima4", "Petrushin4", 21, 0));
-            //_studentList.Add(new Student("Dima5", "Petrushin5", 20, 0));
+            //_studentList.Add(new Student("DimaOne", "PetrushinOne", 24, 0));
+            //_studentList.Add(new Student("DimaTwo", "PetrushinTwo", 23, 0));
+            //_studentList.Add(new Student("DimaT", "PetrushinT", 22, 0));
+            //_studentList.Add(new Student("DimaF", "PetrushinF", 21, 0));
+            //_studentList.Add(new Student("DimaFv", "PetrushinFv", 20, 0));
 
-            //_studentList.Add(new Student("Vanya1", "Petkin1", 24, 0));
-            //_studentList.Add(new Student("Vanya2", "Petkin2", 23, 0));
-            //_studentList.Add(new Student("Vanya3", "Petkin3", 22, 0));
-            //_studentList.Add(new Student("Vanya4", "Petkin4", 21, 0));
-            //_studentList.Add(new Student("Vanya5", "Petkin5", 20, 0));
+            //_studentList.Add(new Student("VanyaOne", "PetkinOne", 24, 0));
+            //_studentList.Add(new Student("VanyaTwo", "PetkinTwo", 23, 0));
+            //_studentList.Add(new Student("VanyaT", "PetkinT", 22, 0));
+            //_studentList.Add(new Student("VanyaF", "PetkinF", 21, 0));
+            //_studentList.Add(new Student("VanyaFv", "PetkinFv", 20, 0));
 
-            //_studentList.Add(new Student("Slavik1", "Lebedev1", 24, 0));
-            //_studentList.Add(new Student("Slavik2", "Lebedev2", 23, 0));
-            //_studentList.Add(new Student("Slavik3", "Lebedev3", 22, 0));
-            //_studentList.Add(new Student("Slavik4", "Lebedev4", 21, 0));
-            //_studentList.Add(new Student("Slavik5", "Lebedev5", 20, 0));
+            //_studentList.Add(new Student("SlavikOne", "LebedevOne", 24, 0));
+            //_studentList.Add(new Student("SlavikTwo", "LebedevTwo", 23, 0));
+            //_studentList.Add(new Student("SlavikT", "LebedevT", 22, 0));
+            //_studentList.Add(new Student("SlavikF", "LebedevF", 21, 0));
+            //_studentList.Add(new Student("SlavikFv", "LebedevFv", 20, 0));
         }
 
         public static Student[] GetStudents()
@@ -74,7 +74,7 @@ namespace Humans.HumansLibrary
 
         public static void AddStudent()
         {
-            var newStudent = new Student("", "", 0, 0);
+            var newStudent = new Student("F", "F", 0, 0);
 
             Console.WriteLine("Give a name of a student:");
             newStudent.Name = Console.ReadLine();
