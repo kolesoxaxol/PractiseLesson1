@@ -91,7 +91,7 @@ namespace OstrukHomeWork
                 Console.WriteLine(mess);
                 Index++;
             }
-            if (Index < 3)
+            if (Index < 3) // магические числа => выноси в переменую с самодокументируемым названием что это
             {
                 mess = groups[Index].Add(student);
             }
