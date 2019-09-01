@@ -273,7 +273,7 @@ namespace Humans.Groups
             {
                 if (GroupList.GetGroups()[groupNumb - 1].Listeners[i] != null)
                 {
-                    Console.WriteLine($"N: {i + 1, 0}, Name: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Name, 3}, Surname: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Surname, 5}, Age: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Age, 3}.");
+                    Console.WriteLine($"N: {i + 1, 0}, Name: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Name, 10}, Surname: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Surname, 10}, Age: {GroupList.GetGroups()[groupNumb - 1].Listeners[i].Age, 3}.");
                 }
             }
 

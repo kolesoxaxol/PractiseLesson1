@@ -21,14 +21,14 @@ namespace Humans.HumansLibrary
             _studentList.Add(new Student("VasyaOne", "PetkinOne", 24, 0));
             _studentList.Add(new Student("VasyaTwo", "PetkinTwo", 23, 0));
             _studentList.Add(new Student("VasyaT", "PetkinT", 22, 0));
-            //_studentList.Add(new Student("VasyaF", "PetkinF", 21, 0));
-            //_studentList.Add(new Student("VasyaFv", "PetkinFv", 20, 0));
+            _studentList.Add(new Student("VasyaF", "PetkinF", 21, 0));
+            _studentList.Add(new Student("VasyaFv", "PetkinFv", 20, 0));
 
-            ////_studentList.Add(new Student("DimaOne", "LebedevOne", 24, 0));
-            ////_studentList.Add(new Student("DimaTwo", "LebedevTwo", 23, 0));
-            ////_studentList.Add(new Student("DimaT", "LebedevT", 22, 0));
-            ////_studentList.Add(new Student("DimaF", "LebedevF", 21, 0));
-            ////_studentList.Add(new Student("DimaFv", "LebedevFv", 20, 0));
+            _studentList.Add(new Student("DimaOne", "LebedevOne", 24, 0));
+            _studentList.Add(new Student("DimaTwo", "LebedevTwo", 23, 0));
+            _studentList.Add(new Student("DimaT", "LebedevT", 22, 0));
+            _studentList.Add(new Student("DimaF", "LebedevF", 21, 0));
+            _studentList.Add(new Student("DimaFv", "LebedevFv", 20, 0));
 
             ////_studentList.Add(new Student("VanyaOne", "SmolinOne", 24, 0));
             ////_studentList.Add(new Student("VanyaTwo", "SmolinTwo", 23, 0));
