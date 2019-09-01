@@ -11,7 +11,8 @@
             this.lastName = lastName;
         }
 
-        public string Name { get { return name; } set { name = value; } }
+        public string Name { get { return name; } set { name = value; } } // в учебных целях то что ты расписал так это норм но в продакшене лучше пиши string Name {get;set;}
+        
 
         public override string ToString()
         {
