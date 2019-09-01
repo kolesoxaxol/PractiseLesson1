@@ -5,7 +5,7 @@ namespace OstrukHomeWork
 {
     class Program
     {
-        public static int Index = 0;
+        public static int Index = 0; // camalCase index Дальше по коду соответсвенно , почему mess например правильно? приучай себя к одному стилю
         public static string mess = "";
 
         public static Group[] groups = new Group[3] { new Group("First", "Assistant Professor"),
@@ -13,7 +13,7 @@ namespace OstrukHomeWork
             new Group("Third", "Assistant")};
 
         static void Main(string[] args)
-        {
+        { // кто то линивая ... не захотел тут цикл написать 
             AddStudent(new Student("Serhii1", "Ostruk1"));
             AddStudent(new Student("Serhii2", "Ostruk2"));
             AddStudent(new Student("Serhii3", "Ostruk3"));
