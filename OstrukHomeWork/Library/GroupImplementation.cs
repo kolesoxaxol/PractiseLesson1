@@ -4,13 +4,13 @@ namespace Library
 {
     partial class Group
     {
-        public Group(string GroupName, string teacherType)
+        public Group(string GroupName, string teacherType) // use cameCase for fields and UpperCase for Propety => groupName
         {
             this.GroupName = GroupName;
             teacher = new Teacher(teacherType);
             switch (teacherType)
             {
-                case "Assistant Professor":
+                case "Assistant Professor":  // переделай по свободке на Enum 
                     students = new Student[20];
                     break;
                 case "Lecturer":
@@ -19,6 +19,8 @@ namespace Library
                 case "Assistant":
                     students = new Student[5];
                     break;
+
+                  // default? ? ? GroupName пришло "Professor" 
             }
         }
 
