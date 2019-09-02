@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarCreator.cs" />
+    <Compile Include="Minivan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Truck.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
