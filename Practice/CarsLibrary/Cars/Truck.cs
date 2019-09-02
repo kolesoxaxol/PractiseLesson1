@@ -9,6 +9,11 @@ namespace CarsManagement.Cars
     public class Truck : Car
     {
 
+        public Truck()
+        {
+
+        }
+
         public Truck(string name, int price, string color) : base(name, price, color)
         {
         }

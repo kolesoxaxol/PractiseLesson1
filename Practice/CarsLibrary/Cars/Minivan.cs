@@ -39,12 +39,12 @@ namespace CarsManagement.Cars
                 _seats = tempSeats;
             }
         }
-        public new int DiscountPrice
+        public new decimal DiscountPrice
         {
             get
             {
                 DateTime date = new DateTime();
-                return this.Price * (1 - 2 * date.Month / 100);
+                return this.Price * (100 - 2 * date.Month) / 100;
             }
         }
     }

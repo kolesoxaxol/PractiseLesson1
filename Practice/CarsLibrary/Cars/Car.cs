@@ -8,7 +8,12 @@ namespace CarsManagement.Cars
 {
     public abstract class Car
     {
-        private int _discountPrice;
+        private decimal _discountPrice;
+
+        public Car()
+        {
+
+        }
 
         public Car(string name, int price, string color)
         {
@@ -19,8 +24,8 @@ namespace CarsManagement.Cars
 
         public string Name { get; internal set; }
         public string Color { get; internal set; }
-        public int Price { get; internal set; }
-        public int DiscountPrice
+        public decimal Price { get; internal set; }
+        public decimal DiscountPrice
         {
             get
             {
@@ -28,11 +33,11 @@ namespace CarsManagement.Cars
             }
             internal set
             {
-                int discount = value;
+                decimal discount = value;
 
-                int newPrice = this.Price*(1 - discount/100);
+                decimal limitDiscount = 0.3m;
 
-                bool discountTooBig =  newPrice < this.Price * 0.7;
+                bool discountTooBig =  discount/100 > limitDiscount;
 
                 if(discountTooBig)
                 {
@@ -41,7 +46,7 @@ namespace CarsManagement.Cars
                 }
                 else
                 {
-                    _discountPrice = newPrice;
+                    _discountPrice = this.Price*(100-discount)/100;
                 }
 
             }
