@@ -12,7 +12,7 @@ namespace ClassLibrary1
         {
         
             Name = name;
-            Group = group;
+            this.group = group;
             Prepod = prepod;
 
         }
