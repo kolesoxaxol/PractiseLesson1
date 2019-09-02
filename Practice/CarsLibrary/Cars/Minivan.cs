@@ -39,5 +39,13 @@ namespace CarsManagement.Cars
                 _seats = tempSeats;
             }
         }
+        public new int DiscountPrice
+        {
+            get
+            {
+                DateTime date = new DateTime();
+                return this.Price * (1 - 2 * date.Month / 100);
+            }
+        }
     }
 }

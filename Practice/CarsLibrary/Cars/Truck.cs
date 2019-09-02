@@ -13,13 +13,6 @@ namespace CarsManagement.Cars
         {
         }
 
-        public new int DiscountPrice
-        {
-            get
-            {
-                DateTime date = new DateTime();
-                return this.Price*(1 - 2 * date.Month / 100);
-            }
-        }
+
     }
 }

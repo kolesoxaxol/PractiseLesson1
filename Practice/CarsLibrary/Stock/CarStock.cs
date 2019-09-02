@@ -7,48 +7,41 @@ using CarsManagement.Cars;
 
 namespace CarsManagementStock
 {
-    public class CarStock
+    public class TruckStock
     {
-        static List<Car> _carList;
+        static List<Truck> _truckList;
         
 
-        static CarStock()
+        static TruckStock()
         {
-            _carList = new List<Car>();
+            _truckList = new List<Truck>();
         }
 
-        public static  void AddCarr(Car car)
+        public static  void AddTruck(Truck truck)
         {
-            _carList.Add(car);
+            _truckList.Add(truck);
         }
 
-        public static Car[] GetCars()
+        public static Truck[] GetTrucks()
         {
-            return _carList.ToArray();
+            return _truckList.ToArray();
         }
 
         //Providing discount. If original price minus discount is less than a specific treshold -> user gets a notification.
-        public static Car Discount(int numb, int discount)
+        public static Truck Discount(int numb, int discount)
         {
-            if(_carList[numb].Price-discount>=_carList[numb].Price/8)
-            {
-                var temCar = new Car(_carList[numb].Name, _carList[numb].Price-discount, _carList[numb].Color);
-                return temCar;
+            Truck truck = GetTrucks()[numb];
 
-            }
-            else
-            {
-                Console.WriteLine("Discount is way to big!");
-                var temCar = new Car(_carList[numb].Name, _carList[numb].Price, _carList[numb].Color);
-                return temCar;
-            }
+            _truckList[numb].DiscountPrice = discount;
+
+            return truck;
         }
 
-        public static void ShowCars()
+        public static void ShowTrucks()
         {
-            for (int i = 0;i<_carList.Count;i++)
+            for (int i = 0;i< _truckList.Count;i++)
             {
-                Console.WriteLine($"Number: {i}, Name: {_carList[i].Name}, Color: {_carList[i].Color}, Price: {_carList[i].Price}.");
+                Console.WriteLine($"Number: {i}, Name: {_truckList[i].Name}, Color: {_truckList[i].Color}, Price: {_truckList[i].Price}.");
             }
         }
     }
