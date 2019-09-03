@@ -11,6 +11,13 @@ namespace CarsManagement.Cars
         private int _seats;
         private int _seatsLowerLimit = 5;
         private int _seatsUpperLimit = 10;
+
+
+        public Minivan()
+        {
+
+        }
+
         public Minivan(string name, int price, string color, int seats) : base(name, price, color)
         {
             this.Seats = seats;
@@ -29,12 +36,13 @@ namespace CarsManagement.Cars
 
                 bool seatsInRange =   _seatsLowerLimit <= tempSeats && tempSeats <= _seatsUpperLimit;
 
-                do
+                
+                while(!seatsInRange)
                 {
-                    Console.WriteLine($"TPlease, select another amount. Min: {_seatsLowerLimit}; Max: {_seatsUpperLimit}");
+                    Console.WriteLine($"Please, select another amount. Min: {_seatsLowerLimit}; Max: {_seatsUpperLimit}");
                     tempSeats = int.Parse(Console.ReadLine());
+                    seatsInRange = _seatsLowerLimit <= tempSeats && tempSeats <= _seatsUpperLimit;
                 }
-                while (!seatsInRange);
 
                 _seats = tempSeats;
             }

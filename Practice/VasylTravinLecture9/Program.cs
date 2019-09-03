@@ -12,18 +12,27 @@ namespace VasylTravinLecture9
     {
         static void Main(string[] args)
         {
-            int amountOfTrucks = 3;
+            //int amountOfTrucks = 3;
+            int amountOfMinivans = 3;
 
-            Console.WriteLine($"Welcome! Please, define {amountOfTrucks} trucks!");
+            //Console.WriteLine($"Welcome! Please, define {amountOfTrucks} trucks!");
 
-            for (int i = 0; i < amountOfTrucks; i++)
+            //for (int i = 0; i < amountOfTrucks; i++)
+            //{
+            //    TruckStock.AddTruck();
+            //}
+
+            Console.WriteLine($"Welcome! Please, define {amountOfMinivans} minivans!");
+
+            for (int i = 0; i < amountOfMinivans; i++)
             {
-                TruckStock.AddTruck();
+                MinivanStock.AddMinivan();
             }
 
-            Truck truck = TruckStock.Discount();
+            Minivan minivan = MinivanStock.Discount();
 
-            Console.WriteLine($"Original price: {truck.Price}, Buying price: {truck.DiscountPrice}");
+            Console.WriteLine($"Original price: {minivan.Price}, Buying price: {minivan.DiscountPrice}");
+
 
             Console.ReadKey();
         }
