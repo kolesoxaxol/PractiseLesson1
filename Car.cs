@@ -11,6 +11,7 @@ namespace Les9
         public string Name { get; set; }
         public string Color { get; set; }
         private uint price;
+        public int Discont { get; private set; }
         public uint Price
         {
             get
@@ -23,11 +24,17 @@ namespace Les9
                 SetDiscont();
             }
         }
-        public int Discont { get; private set; }
-        internal void SetDiscont()
+        public Car(string name,string color,uint price)
         {
-            Random random = new Random();
-            Discont = random.Next(0, 50);
+            Name = name;
+            Color = color;
+            this.price = price;
+        }
+        
+        internal virtual void SetDiscont()
+        {
+            
+            Discont = Random;
         }
         public uint GetPriceWithDiscont()
         {

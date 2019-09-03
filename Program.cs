@@ -21,13 +21,13 @@ namespace Les9
             
             for (uint i = 0; i < count; i++)
             {
-                Car car = new Car();
+                
                 Console.Clear();
                 Console.WriteLine($"Лот№ {i+1}"); 
                 Console.Write("Введите название машины:");
-                car.Name = Console.ReadLine();
+                string Name = Console.ReadLine();
                 Console.Write("Введите цвет машины:");
-                car.Color = Console.ReadLine();
+                string Color = Console.ReadLine();
                 uint price;
                 int clear = 0;
                 do
@@ -36,7 +36,8 @@ namespace Les9
                     Console.Write("Введите цену машины:");
                     clear = 1;
                 } while (!uint.TryParse(Console.ReadLine(),out price));
-                car.Price = price;
+               
+                Car car = new Car(Name,Color, price);
                 carMagazin.AddCar(car);
             }
 
