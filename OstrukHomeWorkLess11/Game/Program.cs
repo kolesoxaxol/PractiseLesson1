@@ -74,7 +74,7 @@ namespace Game
                             }
                             if (a.Name == "UberCheater")
                             {
-                                foreach (var player in players.Where(s => s.Name != "Cheater"))
+                                foreach (var player in players.Where(s => s.Name != "UberCheater"))
                                 {
                                     a.Numbers.AddRange(player.Numbers);
                                 }
