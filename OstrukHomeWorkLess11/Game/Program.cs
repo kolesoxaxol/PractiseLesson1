@@ -30,20 +30,23 @@ namespace Game
                 Random random = new Random();
                 if (quest == "1")
                 {
+                    players.Clear();
+                    choise = 0;
                     string choiseStr = "";
                     Console.Write($"Enter a number of players between 2 and 8: ");
                     do
                     {
-                        choiseStr = Console.ReadLine();
-                        int.TryParse(choiseStr, out choise);
-                        for(int i = 0; i < choise; i++)
+                        while (choise > 8
+                        || choise < 2){
+                            choiseStr = Console.ReadLine();
+                            int.TryParse(choiseStr, out choise);
+                        }
+                        for (int i = 0; i < choise; i++)
                         {
                             players.Add(BasePlayers[random.Next(0, 4)]);
                         }
                     }
-                    while (choise == 0
-                    && choise >= 8
-                    && choise <= 2);
+                    while (choise == 0);
                     Console.WriteLine($"{choise} players added!");
                     Console.WriteLine();
                     Console.WriteLine("Players:");
