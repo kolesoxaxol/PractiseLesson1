@@ -1,31 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Library.Players
 {
     public class SimplePlayer : IPlayer
     {
         public string Name { get; set; }
-        public int[] Numbers { get; set; }
+        public List<int> Numbers { get; set; }
+        private Random random;
 
         public SimplePlayer(string Name)
         {
             this.Name = Name;
-            Numbers = new int[100];
+            random = new Random();
+            Numbers = new List<int>();
         }
 
         public bool Guess(FruitBasket basket)
         {
-            int i = 0;
-            Random random = new Random();
+            int tmp = random.Next(0, 1000);
+            Numbers.Add(tmp);
 
-            while (i < 100)
+            if (tmp == basket.Weight)
             {
-                Numbers[i] = random.Next(0, 1000);
-                if (Numbers[i] == basket.Weight)
-                {
-                    return true;
-                }
-                i++;
+                return true;
             }
             return false;
         }

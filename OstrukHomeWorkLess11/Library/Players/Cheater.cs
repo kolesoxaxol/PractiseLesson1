@@ -6,40 +6,32 @@ namespace Library.Players
     public class Cheater : IPlayer
     {
         public string Name { get; set; }
-        public int[] Numbers { get; set; }
-        private List<IPlayer> players;
+        public List<int>Numbers { get; set; }
+        private Random random;
 
-        public Cheater(string Name, List<IPlayer> Players)
+        public Cheater(string Name)
         {
-            players = Players;
             this.Name = Name;
-            Numbers = new int[100];
+            random = new Random();
+            Numbers = new List<int>();
         }
 
         public bool Guess(FruitBasket basket)
         {
-            int i = 0;
-            Random random = new Random();
+            int tmp = random.Next(0, 1000);
+            Numbers.Add(tmp);
 
-            while (i < 100)
+            foreach (var a in Numbers)
             {
-                Numbers[i] = random.Next(0, 1000);
-                foreach (var a in players)
+                if (a == tmp)
                 {
-                    for(int j = 0; j < a.Numbers.Length; j++)
-                    {
-                        if (a.Numbers[j] == Numbers[i])
-                        {
-                            Numbers[i] = random.Next(0, 100000);
-                            break;
-                        }
-                    }
+                    tmp = random.Next(0, 1000);
                 }
-                if (Numbers[i] == basket.Weight)
-                {
-                    return true;
-                }
-                i++;
+            }
+
+            if (tmp == basket.Weight)
+            {
+                return true;
             }
             return false;
         }

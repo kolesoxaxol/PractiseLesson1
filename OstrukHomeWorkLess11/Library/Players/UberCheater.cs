@@ -5,42 +5,32 @@ namespace Library.Players
     public class UberCheater : IPlayer
     {
         public string Name { get; set; }
-        public int[] Numbers { get; set; }
-        private List<IPlayer> players;
+        public List<int> Numbers { get; set; }
+        private static int i = 40;
 
-        public UberCheater(string Name, List<IPlayer> Players)
+        public UberCheater(string Name)
         {
-            players = Players;
             this.Name = Name;
-            Numbers = new int[100];
+            Numbers = new List<int>();
         }
 
         public bool Guess(FruitBasket basket)
         {
-            int i = 0;
-            int check = 40;
+            int tmp = i;
 
-            while (i < 100)
+            if (tmp == basket.Weight)
             {
-                Numbers[i] = check;
-                foreach (var a in players)
-                {
-                    for (int j = 0; j < a.Numbers.Length; j++)
-                    {
-                        if (a.Numbers[j] == Numbers[i])
-                        {
-                            Numbers[i] = check++;
-                            break;
-                        }
-                    }
-                }
-                if (Numbers[i] == basket.Weight)
-                {
-                    return true;
-                }
-                check++;
-                i++;
+                return true;
             }
+            Numbers.Add(tmp);
+            foreach (var a in Numbers)
+            {
+                if (a == tmp)
+                {
+                    tmp = i++;
+                }
+            }
+            i++;
             return false;
         }
 

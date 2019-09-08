@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Library;
 using Library.Players;
 
@@ -9,44 +10,114 @@ namespace Game
     {
         static void Main(string[] args)
         {
+            IPlayer[] BasePlayers = new IPlayer[]{
+                new SimplePlayer("SimplePlayer"),
+                new NotepadPlayer("NotepadPlayer"),
+                new UberPlayer("UberPlayer"),
+                new Cheater("Cheater"),
+                new UberCheater("UberCheater")
+            };
             FruitBasket fruitBasket = new FruitBasket();
             List<IPlayer> players = new List<IPlayer>();
-            players.Add(new SimplePlayer("SimplePlayer"));
-            players.Add(new NotepadPlayer("NotepadPlayer"));
-            players.Add(new UberPlayer("UberPlayer"));
-            players.Add(new Cheater("Cheater", players));
-            players.Add(new UberCheater("UberCheater", players));
+            List<int> attempts = new List<int>();
 
-            Console.WriteLine("Players:");
-            foreach(var a in players)
+            string quest = "";
+            int choise = 0;
+            while (quest != "exit")
             {
-                Console.WriteLine(a);
-            }
-
-            Console.WriteLine();
-            Console.WriteLine($"Basket weight: {fruitBasket.Weight}");
-            Console.WriteLine();
-
-            string win = "";
-            foreach (var a in players)
-            {
-                if (a.Guess(fruitBasket))
+                Menu();
+                quest = Console.ReadLine();
+                Random random = new Random();
+                if (quest == "1")
                 {
-                    win = $"Game win: {a}";
-                    break;
+                    string choiseStr = "";
+                    Console.Write($"Enter a number of players between 2 and 8: ");
+                    do
+                    {
+                        choiseStr = Console.ReadLine();
+                        int.TryParse(choiseStr, out choise);
+                        for(int i = 0; i < choise; i++)
+                        {
+                            players.Add(BasePlayers[random.Next(0, 4)]);
+                        }
+                    }
+                    while (choise == 0
+                    && choise >= 8
+                    && choise <= 2);
+                    Console.WriteLine($"{choise} players added!");
+                    Console.WriteLine();
+                    Console.WriteLine("Players:");
+                    foreach (var a in players)
+                    {
+                        Console.WriteLine(a);
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine($"Basket weight: {fruitBasket.Weight}");
+                    Console.WriteLine();
+
+                    int attempt = 100;
+                    string win = "";
+                    while (attempt > 0)
+                    {
+                        foreach (var a in players)
+                        {
+                            if (a.Name == "Cheater")
+                            {
+                                foreach (var player in players.Where(s => s.Name != "Cheater"))
+                                {
+                                    a.Numbers.AddRange(player.Numbers);
+                                }
+                            }
+                            if (a.Name == "UberCheater")
+                            {
+                                foreach (var player in players.Where(s => s.Name != "Cheater"))
+                                {
+                                    a.Numbers.AddRange(player.Numbers);
+                                }
+                            }
+                            if (a.Guess(fruitBasket))
+                            {
+                                win = $"Game win: {a}";
+                                break;
+                            }
+                        }
+                        if (win != "")
+                        {
+                            break;
+                        }
+                        attempt--;
+                    }
+
+                    if (win != "")
+                    {
+                        Console.WriteLine(win);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No one wins!");
+                    }
+                }
+                else if (quest == "2")
+                {
+                    Console.Clear();
+                }
+                else if (quest == "3")
+                {
+                    quest = "exit";
+                    Console.WriteLine("Good bye!");
                 }
             }
 
-            if(win != "")
-            {
-                Console.WriteLine(win);
-            }
-            else
-            {
-                Console.WriteLine("No one wins!");
-            }
-
             Console.ReadKey();
+        }
+
+        private static void Menu()
+        {
+            Console.WriteLine("Choise quantity players for start the game: press 1");
+            Console.WriteLine("Clear: press 2");
+            Console.WriteLine("Exit: press 3");
+            Console.Write("Make your choise: ");
         }
     }
 }
