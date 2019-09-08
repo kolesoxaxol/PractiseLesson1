@@ -50,9 +50,12 @@ namespace Game
                     Console.WriteLine($"{choise} players added!");
                     Console.WriteLine();
                     Console.WriteLine("Players:");
+                    int toName = 1;
                     foreach (var a in players)
                     {
+                        a.Name += toName;
                         Console.WriteLine(a);
+                        toName++;
                     }
 
                     Console.WriteLine();
